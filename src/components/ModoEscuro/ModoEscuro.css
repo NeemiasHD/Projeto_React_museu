@@ -1,0 +1,9 @@
+.bx.bxs-moon {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .bx.bxs-moon:hover{
+    transform: scale(1.1);
+  }

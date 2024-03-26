@@ -1,0 +1,62 @@
+
+.dividirItens .MaisSobre{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    padding:15px;
+
+}
+.dividirItens{
+    margin: 10px;
+    width: 1100px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    text-align:left;
+    padding-left: 100px;
+    padding-right: 100px;
+    justify-content: space-between;
+    position: absolute;
+    border-radius: 10px;
+   
+  
+  }
+  .DividirItensTitulo{
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+    transition: all .5s;
+  
+  }
+  
+  .dividirItensContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .MaisSobre{
+    cursor: pointer;
+    transition: all .3s ;
+    position: relative;
+
+
+  }
+  .MaisSobre:hover{
+    color: var(--vermelho);
+  }
+  .MaisSobre:hover::before{
+    transform: scaleX(1);
+  }
+  .MaisSobre::before{
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 3px;
+    background-color: var(--vermelho);
+    bottom: 9px;
+    
+    transform: scaleX(0);
+    transform-origin: left;
+    
+    transition: all .5s;
+  }

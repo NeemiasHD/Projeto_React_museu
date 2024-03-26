@@ -1,0 +1,207 @@
+.containerRenderItens {
+  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.ItensAcervo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  gap: 40px;
+}
+.container {
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+}
+
+/*ITEM*/
+.CorpoItem {
+  height: 250px;
+  width: 500px;
+
+  display: flex;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.178);
+  transition: all .4s;
+
+}
+.CorpoItem:hover{
+  
+  transform: scale(1.05);
+}
+
+.IMGContainer {
+  width: 450px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--CorCinza);
+  justify-content: center;
+}
+.ImagemItem {
+  height: 100%;
+
+}
+.TituloDescricaoEBotaoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 100%;
+
+}
+.TituloItem {
+  margin-top: 5px;
+  font-size: 15px;
+
+  width: 90%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+.TituloItem::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 5px;
+  bottom: 5px;
+  background-color: var(--vermelho);
+}
+.TituloItem.SemLinhaAfter::after{
+  content: none;
+}
+.descricaoProduto {
+
+  text-align: center;
+  font-size: 10px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  justify-content: center;
+  overflow: hidden;
+  width: 90%;
+
+
+  
+}
+.SaibaMais {
+  background-color: var(--cinzaPrincipal);
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  margin-top: 20px;
+}
+.Classificacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Classificacaobtn .bx {
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.Classificacaobtn {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+/*Inputs de edicao*/
+.Edit{
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px;
+}
+.Edit.descricaoInput{
+  height: 120px;
+
+}
+
+/*LOADER*/
+.loaderContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  margin-bottom: 100px;
+}
+.loader {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  border: 5px solid;
+  border-color: var(--vermelho) rgba(255, 255, 255, 0.25) var(--vermelho)
+    rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin-bottom: 200px;
+  margin-top: 150px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.containerLOADER {
+  display: flex;
+  justify-content: center;
+}
+.containerEmptyAcervo{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.containerEmptyAcervo p{
+
+  padding: 20px;
+  border-radius: 0px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.loader.eae{
+  margin: 0;
+}
+
+
+
+.bx.bxs-edit{
+  transition: none;
+}
+
+/*Customizando Paginação*/
+
+
+
+

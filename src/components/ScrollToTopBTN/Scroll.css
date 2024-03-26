@@ -1,0 +1,19 @@
+.scrollToTop{
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    font-size: 50px;
+    opacity: 0;
+    transition: all .2s;
+    cursor: pointer;
+    z-index: 100;
+  }
+  .bx.bxs-chevron-up{
+    color: var(--vermelho);
+    text-shadow: 0px 0px 5px ;
+    cursor: pointer;
+    transition: all .5s ;
+  }
+  .bx.bxs-chevron-up:hover{
+    transform: scale(1.2);
+  }

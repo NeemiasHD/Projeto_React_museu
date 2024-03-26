@@ -1,0 +1,63 @@
+.CookieConcentimentMain {
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.Cookie {
+  position: fixed;
+  height: 100px;
+  width: 90%;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.742);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  bottom: -100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: all .5s;
+  max-width: 1500px;
+  overflow: hidden;
+}
+.bx.bxs-cookie {
+  font-size: 40px;
+  color: white;
+}
+.textoCookie h1 {
+  color: white;
+  font-size: 20px;
+}
+.textoCookie p {
+}
+.ButtonsCookies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.ButtonsCookies a {
+  width: 150px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--vermelho);
+  font-size: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.AceitarCookieBtn {
+  background-color: var(--vermelho);
+  color: black;
+}
+.RecusarCookieBtn {
+  color: var(--vermelho);
+}
+.PoliticaCookie {
+  color: var(--vermelho);
+  text-decoration: underline;
+  cursor: pointer;
+}

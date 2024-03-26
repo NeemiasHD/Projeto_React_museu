@@ -1,0 +1,45 @@
+.Pesquisar {
+  width: 100%;
+  margin-top: 45px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.categoriaSearch {
+  background-color: var(--cinzaPrincipal);
+  height: 30px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.InputBarraDePesquisa {
+  width: 600px;
+  height: 35px;
+  border: none;
+  background-color: transparent;
+  color: var(--cinzaPrincipal);
+  padding-left: 10px;
+  border-radius: 20px;
+  border: 2px solid var(--cinzaPrincipal);
+}
+.InputBarraDePesquisa:focus {
+  outline: none;
+}
+.submitbtnSearch {
+  display: flex;
+  height: 30px;
+  width: 70px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 20px;
+  border: 2px solid var(--cinzaPrincipal);
+}
+.submitbtnSearch i {
+  font-size: 20px;
+}

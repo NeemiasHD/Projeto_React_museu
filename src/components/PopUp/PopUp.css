@@ -1,0 +1,302 @@
+.PopUpContainer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+  top: 0;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.498);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: ease-in 0.1s;
+ 
+}
+.PopUpBackground.Acervo {
+  background-color: rgba(0, 0, 0, 0.607);
+  width: 900px;
+  height: 550px;
+  transition: ease-in 0.2s;
+  transform: scale(1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  gap: 30px;
+  
+}
+.PopUpBackground.Login {
+  width: 300px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.PopUp_name_And_Description_Container p {
+  color: var(--corFundoPreto);
+  width: 400px;
+}
+.PopUpBackground img {
+  width: 100%;
+}
+.Container1PopUp {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+.ContainerClassificationPopUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 40px;
+}
+.ContainerClassificationPopUp .Classificacaobtn .bx {
+}
+.PopUp_name_And_Description_Container {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  position: relative;
+}
+.TituloPopUp {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+.TituloPopUp::before {
+  content: "";
+  width: 90%;
+  height: 3px;
+  top: 45px;
+  background-color: var(--vermelho);
+  position: absolute;
+}
+.DescricaoPopUp {
+  font-size: 16px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  height: 340px;
+  overflow-y: scroll;
+  border: 3px solid var(--vermelho);
+}
+.PopUpImgContainer {
+  width: 400px;
+  max-height: 400px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  gap: 20px;
+  border-radius: 10px;
+}
+.PopUpImgContainer img {
+  width: 500px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.FecharPopUp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  z-index: 100;
+}
+.FecharPopUp .bx {
+  font-size: 30px;
+  color: var(--vermelho);
+}
+.VisiteSite {
+  background-color: var(--corFundoPreto);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  color: var(--corFundoBranco);
+  margin-top: 20px;
+}
+.Foto.Perfil.PopUp {
+  border-radius: 200px;
+  width: 150px;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.UserPopUpContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.MinhaContaP {
+  color: white;
+  margin-top: 20px;
+}
+
+.PopUpUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  gap: 20px;
+}
+.PopUpUserContent {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.607);
+
+
+  gap: 100px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+}
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.LabelPopUpUser {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.LabelPopUpUser::before {
+  content: "";
+  height: 3px;
+  width: 100%;
+  background-color: var(--vermelho);
+  bottom: -3px;
+  position: absolute;
+}
+.UserPopUpContainer.Info {
+  gap: 20px;
+}
+.user.InfoContainer i {
+  font-size: 20px;
+  margin-top: 5px;
+  cursor: pointer;
+  color: white;
+}
+.user.InfoContainer i:hover {
+  transform: scale(1.1);
+}
+.TextAreaUser {
+  padding: 5px;
+  height: 50px;
+  width: 200px;
+  font-size: 10px;
+  background-color: transparent;
+  color: black;
+  background-color: white;
+  border: 1px solid white;
+}
+.TextAreaUser:focus {
+  outline: none;
+}
+.SobreMimUser {
+  width: 200px;
+  text-align: center;
+  font-size: 10px;
+  height: 50px;
+}
+.SairContaBtn {
+  color: var(--vermelho);
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid var(--vermelho);
+  width: 50px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.SairContaBtn:hover {
+  color: black;
+  background-color: var(--vermelho);
+}
+.UserInfo {
+  margin: 5px;
+  width: 300px;
+  text-align: center;
+}
+.UserSocialMedia {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.UserSocialMedia i {
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+.userContentMain {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+/*CONTAINER EDICAO DE REDES SOCIAIS*/
+.UserSocialMedia.c2 {
+  display: flex;
+  flex-direction: column;
+}
+.PopUpUserContent.c2 {
+  height: 250px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.InputSocialMedia {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.InputSocialMedia input {
+  width: 190px;
+  height: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 10px;
+}
+.InputSocialMedia input:focus {
+  outline: none;
+}
+
+.LoginWithGoogle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.LoginWithGoogle i {
+  font-size: 100px;
+  color: white;
+}
+
+/*WAVE*/
+
+/*BOTAO GOOGLE*/

@@ -1,0 +1,25 @@
+.btnPaginacao{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+.btnPaginacao a{
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all .5s;
+    font-size: 14px;
+}
+.PaginasNormais:hover{
+    background-color: rgba(255, 0, 0, 0.346);
+   
+
+}
+.Pagina_Atual{
+    background-color: var(--vermelho);
+}

@@ -1,0 +1,73 @@
+.navegacao1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  padding-right: 50px;
+  padding-left: 50px;
+  height: 50px;
+  background-color: var(--corbrancaFundo);
+}
+.iconesNav {
+  display: flex;
+  gap: 30px;
+  transition:all .5s;
+}
+.iconesNav i {
+  font-size: 25px;
+  cursor: pointer;
+  transition: all .3s;
+}
+.iconesNav i:hover{
+  color: var(--vermelho);
+}
+.navegacao2 {
+  display: flex;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.623);
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  z-index: 5;
+}
+.navegacao2 ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navegacao2 ul li {
+  height: 40px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navegacao2 ul li a {
+  color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 100px;
+  border-right: 1px solid white;
+  transition: all .3s;
+  cursor: pointer;
+}
+.navegacao2 ul li a:hover{
+  color: rgb(255, 0, 76);
+  
+  
+}
+
+.Foto.Perfil.NavBar{
+  border-radius: 100px;
+  width: 30px;
+  cursor: pointer;
+  transition: all .5s;
+}
+.Foto.Perfil.NavBar:hover{
+  transform: scale(1.1);
+}

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  box-sizing: border-box;
+
+}
+
+:root{
+  --cinzaPrincipal: #27282a;
+  --corFundoBranco:  #ffffff;
+  --corFundoPreto:  #141618;
+  --CorCinza: rgba(0, 0, 0, 0.213);
+  --vermelho: #ff2a43;
+  --vermelhoEscuro: rgb(126, 0, 0); 
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+p{
+  color: white;
+}
+
+
+
+.bx{
+ color: var(--corFundoPreto);
+ transition: all .5s;
+ 
+}
+::-webkit-scrollbar{
+  background-color: transparent;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--cinzaPrincipal);
+  border-radius: 50px;
+
+}
+textarea{resize: none;}

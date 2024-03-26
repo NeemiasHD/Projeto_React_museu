@@ -1,0 +1,41 @@
+.ImagemPreview {
+  filter: blur(2px);
+  z-index: 1;
+  transition: all 0.5s;
+}
+
+.bx.bx-image-add {
+  z-index: 50;
+  position: absolute;
+  font-size: 50px;
+
+}
+.ImagemInput {
+  width: 280px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+.ImageImputNoticia {
+  width: 300px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/*animacao*/
+@keyframes color_change {
+  from {
+    color: rgb(255, 255, 255);
+  }
+  to {
+    color:white;
+  }
+}
