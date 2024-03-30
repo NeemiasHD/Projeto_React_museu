@@ -199,6 +199,7 @@ function AdmTools({
                   : `/ItemAcervo/Deletar?id=${ItemAcervo.id}`
               );
               setAtualizarBusca(true);
+              SetModoEdicao();
             }
           }}
         ></i>
@@ -226,6 +227,11 @@ function AdmTools({
                 ? `inputTituloNoticiaPequena${ItemAcervo.id}`
                 : `EditTi${ItemAcervo.id}`
             ).value;
+            let linkparaNoticia = document.getElementById(
+              type == 2
+                ? `inputlinkparaNoticia${ItemAcervo.id}`
+                : `EditTi${ItemAcervo.id}`
+            ).value;
             let descricaoItem = document.getElementById(
               type == 2
                 ? `InputDescricaoNoticiaP${ItemAcervo.id}`
@@ -250,6 +256,7 @@ function AdmTools({
                 descricaoNoticia: descricaoItem,
                 imagem1Item: imagem1Item,
                 tagNoticia: tagNoticia_descricaoCurtaItem,
+                linkparaNoticia
               };
             } else {
               let imagem1Item = ImagemEdicao

@@ -1,6 +1,7 @@
 import React from "react";
 import "./CookieConcentiment.css";
 import { useCookies } from "react-cookie";
+import { Link } from "react-router-dom";
 function CookieConcentiment() {
   const [cookies, setCookies] = useCookies(["cookieConsent"]);
   const giveCookieConsent = () => {
@@ -27,7 +28,12 @@ function CookieConcentiment() {
             Este site usa cookies para garantir uma experiência melhor. Ao
             continuar a navegar neste site, você concorda com o uso de cookies
             de acordo com nossa{" "}
-            <a className="PoliticaCookie">Política de Cookies.</a>
+            <Link to={"/PoliticaCookies"} className="PoliticaCookie" onClick={()=>{
+               window.scrollTo({
+                top: 0,
+                
+              });
+            }}>Política de Cookies.</Link>
           </p>
         </div>
         <div className="ButtonsCookies">

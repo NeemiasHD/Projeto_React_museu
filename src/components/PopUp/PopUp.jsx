@@ -46,6 +46,7 @@ function PopUp({
       document.querySelector(
         tipo == 1 ? ".PopUpContainer.Acervo" : ".PopUpContainer.Login"
       ).style.pointerEvents = "all";
+  
     } else {
       document.querySelector(
         tipo == 1 ? ".PopUpBackground.Acervo" : ".PopUpBackground.Login"
@@ -56,6 +57,8 @@ function PopUp({
       document.querySelector(
         tipo == 1 ? ".PopUpContainer.Acervo" : ".PopUpContainer.Login"
       ).style.pointerEvents = "none";
+
+    
     }
   }, [PopUpAtivo]);
 
@@ -71,10 +74,15 @@ function PopUp({
     if (data.error) {
       console.log("Usuario sendo criado");
 
-      const UsuarioGoogleID = user.googleId;
+      const usuarioGoogleID = user.googleId;
+      const userpic = user.imageUrl
+      const name = user.name
       const usuario = {
-        usuarioGoogleID: UsuarioGoogleID,
+        usuarioGoogleID:usuarioGoogleID,
         tipoUsuario: 1,
+        userpic:userpic,
+        name:name
+
       };
       console.log(usuario);
       let response = await itemFetch.post(`/Usuario/Gravar`, usuario);
@@ -127,7 +135,7 @@ function PopUp({
                 <>
                   <div className="Container1PopUp">
                     <div className="PopUpImgContainer">
-                      <img src={Objeto.imagem1Item} alt="Item Image" />
+                      <img src={Objeto.imagem1Item}/>
                     </div>
                     <div className="ContainerClassificationPopUp">
                       {Objeto && Objeto.like && (
@@ -173,12 +181,24 @@ function PopUp({
                         <div className="UserPopUpContainer">
                           <div className="user">
                             <FecharPopUpBtn SetPopUp={SetPopUp} />
-                            <div style={{position:"absolute", left:"9px",top:"9px"}}><ModoEscuroBTN /></div>
+                            <div
+                              style={{
+                                position: "absolute",
+                                right: "33px",
+                                top: "7px",
+                                transform: " scale(0.7)",
+                              }}
+                            >
+                              <ModoEscuroBTN />
+                            </div>
 
                             <p className="MinhaContaP">Minha Conta</p>
                             <img
                               src={User.imageUrl}
                               className="Foto Perfil PopUp"
+                              onClick={()=>{
+                                console.log(UserDatabase)
+                              }}
                             />
                             <p className="UserInfo">{User.name}</p>
                             <p className="UserInfo">{User.email}</p>
@@ -253,11 +273,12 @@ function PopUp({
                             )}
                           </div>
                           <div className="UserSocialMedia">
-                            
                             <i
                               class="bx bxl-instagram"
                               onClick={() => {
-                                document.querySelector(".LinkInsta").click();
+                                UserDatabase.user_insta_link
+                                  ? document.querySelector(".LinkInsta").click()
+                                  : "";
                               }}
                             >
                               <a
@@ -269,7 +290,9 @@ function PopUp({
                             <i
                               class="bx bxl-github"
                               onClick={() => {
-                                document.querySelector(".LinkGit").click();
+                                UserDatabase.user_github_link
+                                  ? document.querySelector(".LinkGit").click()
+                                  : "";
                               }}
                             >
                               <a
@@ -281,7 +304,11 @@ function PopUp({
                             <i
                               class="bx bxl-twitter"
                               onClick={() => {
-                                document.querySelector(".LinkTwitter").click();
+                                UserDatabase.user_twitter_link
+                                  ? document
+                                      .querySelector(".LinkTwitter")
+                                      .click()
+                                  : "";
                               }}
                             >
                               <a
@@ -312,6 +339,7 @@ function PopUp({
                                 placeholder="Link para o Instagram"
                                 defaultValue={UserDatabase.user_insta_link}
                                 id="user_insta_link"
+                                maxLength={100}
                               />
                             </div>
                             <div className="InputSocialMedia">
@@ -321,6 +349,7 @@ function PopUp({
                                 type="text"
                                 placeholder="Link para o Twitter"
                                 defaultValue={UserDatabase.user_twitter_link}
+                                maxLength={100}
                               />
                             </div>
                             <div className="InputSocialMedia">
@@ -330,6 +359,7 @@ function PopUp({
                                 type="text"
                                 placeholder="Link para o Github"
                                 defaultValue={UserDatabase.user_github_link}
+                                maxLength={100}
                               />
                             </div>
                           </div>

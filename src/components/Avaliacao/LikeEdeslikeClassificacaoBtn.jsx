@@ -101,7 +101,7 @@ function LikeEdeslikeClassificacaoBtn({ ItemAcervo, setAtualizarBusca }) {
       }
       setAtualizarBusca(true);
     } else {
-      alert("faca o login para avaliar");
+      document.querySelector(".BtnLogin").click()//aparece o botao de fazer login
     }
   };
   return (

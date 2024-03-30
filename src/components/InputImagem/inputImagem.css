@@ -1,18 +1,21 @@
 .ImagemPreview {
   filter: blur(2px);
   z-index: 1;
-  transition: all 0.5s;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+
 }
 
 .bx.bx-image-add {
   z-index: 50;
   position: absolute;
   font-size: 50px;
-
 }
 .ImagemInput {
-  width: 280px;
   height: 250px;
+  width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +39,6 @@
     color: rgb(255, 255, 255);
   }
   to {
-    color:white;
+    color: white;
   }
 }

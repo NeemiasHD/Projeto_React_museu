@@ -1,19 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./BoasVindas.css";
 
-function BoasVindas() {
+function BoasVindas({ type,Imagem,Title }) {
+  const [Blur, SetBlur] = useState(0);
+  window.addEventListener("scroll", () => {
+    if (window.scrollY < 300) {
+      SetBlur(window.scrollY / 50);
+    } else {
+      if (Blur != 300 / 50) SetBlur(300 / 50);
+    }
+  });
+  useEffect(() => {}, [Blur]);
   return (
     <>
-      <main className="BoasVindasMain">
-        <div className="BackgroundImagembemVindo">
-          <img
-            className="backgroundbemvindo"
-            src="./src/img/backgroundbemvindo.jpg"
-          />
-        </div>
-        
-        
-      </main>
+      <div className="ContainerBemVindo">
+        {type ? (
+          <img className="IMGbemvindoPNG" src={"./src/img/bemvindoPNG.png"} />
+        ) : (
+          <div className="TitleSecondaryPage">
+            <h1>{Title}</h1>
+          </div>
+        )}
+
+        <main className="BoasVindasMain" style={{ top: `-${Blur * 2}px` }}>
+          <div className="BackgroundImagembemVindo">
+            <img
+              style={{ filter: `blur(${Blur}px)` }}
+              className="backgroundbemvindo"
+              src={type?"./src/img/backgroundbemvindo.jpg":Imagem}
+            />
+          </div>
+        </main>
+        <div style={{ marginTop: "450px" }}></div>
+      </div>
     </>
   );
 }

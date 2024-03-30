@@ -1,6 +1,6 @@
 .Pesquisar {
   width: 100%;
-  margin-top: 45px;
+  padding-top: 45px;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -23,22 +23,23 @@
   color: var(--cinzaPrincipal);
   padding-left: 10px;
   border-radius: 20px;
-  border: 2px solid var(--cinzaPrincipal);
+  border: 1px solid var(--cinzaPrincipal);
 }
 .InputBarraDePesquisa:focus {
   outline: none;
 }
 .submitbtnSearch {
   display: flex;
-  height: 30px;
-  width: 70px;
+  height: 35px;
+  width: 100px;
   justify-content: center;
   align-items: center;
   border: none;
   cursor: pointer;
   background-color: transparent;
   border-radius: 20px;
-  border: 2px solid var(--cinzaPrincipal);
+ 
+  background-color: var(--cinzaPrincipal);
 }
 .submitbtnSearch i {
   font-size: 20px;

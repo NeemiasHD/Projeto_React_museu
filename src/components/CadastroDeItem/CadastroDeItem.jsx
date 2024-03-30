@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import InputImagem from "../InputImagem/InputImagem";
 import "./CadastroDeItem.css";
 import itemFetch from "../../axios/api";
-import { Cookies } from "react-cookie";
+
+import { UserContext } from "../../context/UserContext";
 function CadastroDeItem({ type, id, atualizarAcervo }) {
   const [imagem, setImagem] = useState();
   const [LimparImputImagem, SetLimparImputImagem] = useState(false);
+  const { ModoEscuro } = useContext(UserContext);
   return (
     <div className="ADICAODEPRODUTOS">
       <div className={type ? "CorpoNoticia" : "CorpoItem"}>
@@ -20,10 +22,12 @@ function CadastroDeItem({ type, id, atualizarAcervo }) {
             type={type}
           />
         </div>
+
         <div className="TituloDescricaoEBotaoItem">
           <input
             type="text"
             className={type ? "input Titulo" : "input Nome"}
+            maxLength={type ? 75 : 25}
             placeholder={type ? "Título" : "Nome"}
           />
           {type ? (
@@ -48,6 +52,17 @@ function CadastroDeItem({ type, id, atualizarAcervo }) {
             placeholder={type ? "Descrição Noticia" : "Descrição Produto"}
             maxLength={type ? 150 : 400}
           />
+          {type ? (
+            <input
+              type="text"
+              className={"input Titulo LinkNoticia"}
+              placeholder={"Link p/ Noticia"}
+              maxLength={10}
+            />
+          ) : (
+            ""
+          )}
+
           <div
             className={
               type ? "salvarItemContainer Noti" : "salvarItemContainer"
@@ -69,15 +84,20 @@ function CadastroDeItem({ type, id, atualizarAcervo }) {
                     ).value)
                   : (DescricaoItem =
                       document.querySelector(".input.Descricao").value);
-                let tagNoticia, descricaoCurta;
+                let tagNoticia, descricaoCurtaItem;
 
                 type
                   ? (tagNoticia = document.querySelector(
                       ".input.Titulo.TagNotica"
                     ).value)
-                  : (descricaoCurta = document.querySelector(
+                  : (descricaoCurtaItem = document.querySelector(
                       ".input.Nome.descricaoCurta"
                     ).value);
+                let linkparaNoticia;
+                type &&
+                  (linkparaNoticia = document.querySelector(
+                    ".input.Titulo.LinkNoticia"
+                  ).value);
                 let Imagem1Item = imagem;
                 let ItemAcervo;
                 let Noticias;
@@ -87,11 +107,13 @@ function CadastroDeItem({ type, id, atualizarAcervo }) {
                       DescricaoNoticia,
                       tagNoticia,
                       Imagem1Item,
+                      linkparaNoticia,
                     })
                   : (ItemAcervo = {
                       NomeItem,
                       DescricaoItem,
                       Imagem1Item,
+                      descricaoCurtaItem,
                     });
 
                 let response = await itemFetch.post(
@@ -110,6 +132,11 @@ function CadastroDeItem({ type, id, atualizarAcervo }) {
               Salvar
             </a>
             <i
+              style={
+                ModoEscuro
+                  ? { color: "var(--corFundoBranco)" }
+                  : { color: "var(--corFundoPreto)" }
+              }
               class="bx bx-trash"
               id="LimparInput"
               onClick={() => {

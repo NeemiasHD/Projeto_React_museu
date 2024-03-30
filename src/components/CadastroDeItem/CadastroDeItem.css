@@ -69,12 +69,11 @@
   font-size: 15px;
   border: none;
   padding: 20px;
-  height: 30px;
+  height: 60px;
   width: 300px;
 }
 .salvarItemContainer.Noti {
-
-margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 #LimparInput {
   padding: 0;

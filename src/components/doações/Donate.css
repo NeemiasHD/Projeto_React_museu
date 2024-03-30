@@ -1,12 +1,15 @@
 .donateContainer {
-  margin-top: 100px;
-height: 530px;
+  padding-top: 50px;
+
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 50px;
-  margin-bottom: 120px;
+  padding-bottom: 50px;
+  background-color: var(--corFundoBranco);
+  position: relative;
+  z-index: 1;
 }
 .ItensDoacao {
   height: 600px;

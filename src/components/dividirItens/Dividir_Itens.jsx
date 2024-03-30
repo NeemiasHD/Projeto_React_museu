@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import "./DividirItens.css";
 import { UserContext } from "../../context/UserContext";
+import { Link } from "react-router-dom";
 
-function Dividir_Itens({ dividir, PrimeiroItem }) {
+function Dividir_Itens({ dividir, PrimeiroItem, BtnPlus }) {
   const { ModoEscuro } = useContext(UserContext);
   return (
     <div className="dividirItensContainer">
@@ -26,7 +27,14 @@ function Dividir_Itens({ dividir, PrimeiroItem }) {
         >
           {dividir}
         </p>
-        <p
+        <Link
+          to={dividir == "ACERVO" ? "/Acervo" : dividir == "NOTÍCIAS" ? "https://www.bbc.com/portuguese/topics/cg7267q3qv9t" : ""}
+          target={dividir === "NOTÍCIAS" ? "_blank" : ""}
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+            });
+          }}
           className="MaisSobre"
           style={{
             color: PrimeiroItem
@@ -36,8 +44,8 @@ function Dividir_Itens({ dividir, PrimeiroItem }) {
               : "var(--corFundoPreto)",
           }}
         >
-          MAIS SOBRE {dividir}
-        </p>
+          {BtnPlus} {dividir}
+        </Link>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  z-index: 200;
+  z-index: 1000;
   top: 0;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.498);
@@ -13,21 +13,21 @@
   opacity: 0;
   pointer-events: none;
   transition: ease-in 0.1s;
- 
 }
 .PopUpBackground.Acervo {
   background-color: rgba(0, 0, 0, 0.607);
   width: 900px;
   height: 550px;
   transition: ease-in 0.2s;
-  transform: scale(1);
+  transform: scale(0);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   backdrop-filter: blur(6px);
   gap: 30px;
-  
+
+
 }
 .PopUpBackground.Login {
   width: 300px;
@@ -36,6 +36,9 @@
   justify-content: center;
   align-items: center;
   transition: all 0.2s;
+  transform: scale(0);
+  position: relative;
+  z-index: 300;
 }
 
 .PopUp_name_And_Description_Container p {
@@ -73,7 +76,7 @@
   position: relative;
 }
 .TituloPopUp {
-  font-size: 40px;
+  font-size: 30px;
   display: flex;
   justify-content: center;
 }
@@ -92,7 +95,7 @@
   border-radius: 10px;
   height: 340px;
   overflow-y: scroll;
-  border: 3px solid var(--vermelho);
+  border: 2px solid var(--corFundoBranco);
 }
 .PopUpImgContainer {
   width: 400px;
@@ -166,7 +169,6 @@
 .PopUpUserContent {
   display: flex;
   background-color: rgba(0, 0, 0, 0.607);
-
 
   gap: 100px;
   border-radius: 20px;

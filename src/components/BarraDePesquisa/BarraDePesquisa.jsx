@@ -4,9 +4,12 @@ import itemFetch from "../../axios/api";
 import { UserContext } from "../../context/UserContext";
 
 async function BuscarTodos(PaginaAtual) {
-  const response = await itemFetch.get(
-    `/ItemAcervo/BuscarTodos?page=${PaginaAtual}&pageSize=6`
-  );
+  let response;
+  PaginaAtual
+    ? (response = await itemFetch.get(
+        `/ItemAcervo/BuscarTodos?page=${PaginaAtual}&pageSize=6`
+      ))
+    : (response = await itemFetch.get(`/ItemAcervo/BuscarTodos`));
   const data = await response.data;
   return data;
 }
@@ -16,14 +19,49 @@ function BarraDePesquisa({
   atualizarBusca,
   setAtualizarBusca,
   PaginaAtual,
+  TipoBusca,
 }) {
   const [PalavraChave, SetPalavraChave] = useState();
-  const {ModoEscuro} = useContext(UserContext);
+  const { ModoEscuro, setBuscaPorFiltroIsOn, BuscaPorFiltroIsOn } =
+    useContext(UserContext);
+
+  const HandleSearch = async () => {
+    if (TipoBusca) {
+      try {
+        const response = await itemFetch.get(`/ItemAcervo/BuscarTodos`);
+        const data = response.data;
+        const filteredData = data.filter((item) =>
+          item.nomeItem.toLowerCase().includes(PalavraChave.toLowerCase())
+        );
+        setLista(filteredData);
+      } catch (error) {
+        console.error("Erro ao buscar itens:", error);
+      }
+    } else {
+      try {
+        const response = await itemFetch.get(`/ItemAcervo/BuscarTodos`);
+        const data = response.data;
+        const filteredData = data.filter((item) =>
+          item.nomeItem.toLowerCase().includes(PalavraChave.toLowerCase())
+        );
+        setLista(filteredData.slice(0, 6));
+        if (PalavraChave == "") {
+          setBuscaPorFiltroIsOn(false);
+        } else {
+          setBuscaPorFiltroIsOn(true);
+        }
+      } catch (error) {
+        console.error("Erro ao buscar itens:", error);
+      }
+    }
+  };
 
   useEffect(() => {
     async function fetchData() {
-    
-      const result = await BuscarTodos(PaginaAtual);
+      let result;
+      TipoBusca
+        ? (result = await BuscarTodos())
+        : (result = await BuscarTodos(PaginaAtual));
       setLista(result); // se desejar atualizar o estado com o resultado
       setAtualizarBusca(false);
     }
@@ -33,7 +71,11 @@ function BarraDePesquisa({
   return (
     <div className="Pesquisar">
       <input
-    style={ModoEscuro?{color:"var(--corFundoBranco)"}:{color:"var(--corFundoPreto)"}}
+        style={
+          ModoEscuro
+            ? { color: "var(--corFundoBranco)" }
+            : { color: "var(--corFundoPreto)" }
+        }
         className="InputBarraDePesquisa"
         placeholder="Pesquisar Item"
         type="text"
@@ -41,8 +83,11 @@ function BarraDePesquisa({
           SetPalavraChave(e.target.value);
         }}
       />
-      <button className="submitbtnSearch">
-        <i class="bx bx-search-alt" style={ModoEscuro?{color:"var(--corFundoBranco)"}:{color:"var(--corFundoPreto)"}}></i>
+      <button className="submitbtnSearch" onClick={HandleSearch}>
+        <i
+          class="bx bx-search-alt"
+          style={{ color: "var(--corFundoBranco)" }}
+        ></i>
       </button>
     </div>
   );

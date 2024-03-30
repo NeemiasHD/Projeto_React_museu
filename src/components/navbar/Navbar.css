@@ -6,7 +6,9 @@
   padding-right: 50px;
   padding-left: 50px;
   height: 50px;
-  background-color: var(--corbrancaFundo);
+  background-color: var(--corFundoBranco);
+  z-index: 2;
+  position: relative;
 }
 .iconesNav {
   display: flex;
@@ -68,6 +70,4 @@
   cursor: pointer;
   transition: all .5s;
 }
-.Foto.Perfil.NavBar:hover{
-  transform: scale(1.1);
-}
+

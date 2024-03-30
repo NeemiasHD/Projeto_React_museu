@@ -2,7 +2,6 @@
 .dividirItens .MaisSobre{
     color: rgb(255, 255, 255);
     font-size: 16px;
-    padding:15px;
 
 }
 .dividirItens{
@@ -33,11 +32,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
+    position: relative;
   }
   .MaisSobre{
     cursor: pointer;
     transition: all .3s ;
     position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+ 
 
 
   }
@@ -50,11 +55,11 @@
   .MaisSobre::before{
     content: "";
     position: absolute;
-    width: 85%;
+    width: 100%;
     height: 3px;
     background-color: var(--vermelho);
     bottom: 9px;
-    
+    bottom: -4px;
     transform: scaleX(0);
     transform-origin: left;
     

@@ -9,6 +9,7 @@ import CincoEstrelaClassificacao from "../Avaliacao/CincoEstrelaClassificacao";
 import LikeEdeslikeClassificacaoBtn from "../Avaliacao/LikeEdeslikeClassificacaoBtn";
 import AdmTools from "./FeramentaADM/AdmTools";
 import { UserContext } from "../../context/UserContext";
+import { Link } from "react-router-dom";
 
 function RenderItens({
   Lista,
@@ -18,9 +19,11 @@ function RenderItens({
   PaginaAtual,
   SetAtivarPopUp,
   SetIdPopUp,
+  TipoBusca,
 }) {
   const [ModoEdicao, SetModoEdicao] = useState();
-  const { User, userIsLoggin, ModoEscuro, TypeUser } = useContext(UserContext);
+  const { ModoEscuro, TypeUser, BuscaPorFiltroIsOn, setBuscaPorFiltroIsOn } =
+    useContext(UserContext);
   const [ImagemEdicao, SetImagemEdicao] = useState();
 
   // useEffect(() => {
@@ -72,6 +75,7 @@ function RenderItens({
               {ModoEdicao == ItemAcervo.id ? (
                 <input
                   type="text"
+                  maxLength={25}
                   className={`Edit tituloInput ${ItemAcervo.id}`}
                   id={`EditTi${ItemAcervo.id}`}
                   defaultValue={ItemAcervo.nomeItem}
@@ -159,12 +163,29 @@ function RenderItens({
           </div>
         ))}
       </div>
-      <Paginacao
-        setPagina={SetPaginaAtual}
-        PaginaAtual={PaginaAtual}
-        AtualizarBusca={setAtualizarBusca}
-        AtualizarSize={atualizarBusca}
-      />
+      {TipoBusca ? ( //Aqui estou verificando qual tipo de buscar esta sendo feito, se e por paginacao ou se e busca de todos
+        ""
+      ) : BuscaPorFiltroIsOn ? ( //se a buscar for feita por paginacao e tiver filtro, ele vai carregar so 6 e disponibilizar um link pra pagina completa
+        <Link
+          to={"/Acervo"}
+          className="BotaoIrAcervoNoPagination"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+            });
+            setBuscaPorFiltroIsOn(false);
+          }}
+        >
+          Ver mais...
+        </Link>
+      ) : (
+        <Paginacao
+          setPagina={SetPaginaAtual}
+          PaginaAtual={PaginaAtual}
+          AtualizarBusca={setAtualizarBusca}
+          AtualizarSize={atualizarBusca}
+        />
+      )}
     </div>
   ) : (
     <>
@@ -185,16 +206,29 @@ function RenderItens({
             Nenhum Item Foi Encontrado!
             <span class="loader eae"></span>
           </p>
-          <Paginacao
-            setPagina={SetPaginaAtual}
-            PaginaAtual={PaginaAtual}
-            AtualizarBusca={setAtualizarBusca}
-            AtualizarSize={atualizarBusca}
-          />
+          {TipoBusca ? (
+            ""
+          ) : (
+            <Paginacao
+              setPagina={SetPaginaAtual}
+              PaginaAtual={PaginaAtual}
+              AtualizarBusca={setAtualizarBusca}
+              AtualizarSize={atualizarBusca}
+            />
+          )}
         </div>
       ) : (
-        <div className="loaderContainer">
+        <div className="loaderContainer" style={{height:"400px",gap:"20px"}}>
           <span class="loader eae"></span>
+          <p
+            style={
+              ModoEscuro
+                ? { color: "var(--corFundoBranco)" }
+                : { color: "var(--corFundoPreto)" }
+            }
+          >
+            Nenhum Item Foi Encontrado!
+          </p>
         </div>
       )}
     </>

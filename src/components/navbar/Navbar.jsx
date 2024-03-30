@@ -3,19 +3,26 @@ import "./Navbar.css";
 import ModoEscuroBTN from "../ModoEscuro/ModoEscuroBTN";
 import PopUp from "../PopUp/PopUp";
 import { UserContext } from "../../context/UserContext";
+import { Link, useLocation } from "react-router-dom";
+import itemFetch from "../../axios/api";
+import BtnDoacao from "./BtnDoacao";
+import BtnNoticiaNav from "./BtnNoticiaNav";
 
-function Navbar() {
-  const [AtivarPopUpTipo, SetAtivarPopUpTipo] = useState(false);
+function Navbar({ SetAtivarPopUpUsuario }) {
   const { User, ModoEscuro, TypeUser } = useContext(UserContext);
-
+  const location = useLocation(); //Serve pra saber em qual path a pagina esta renderizado
   return (
     <>
-      <PopUp
-        PopUpAtivo={AtivarPopUpTipo}
-        SetPopUp={SetAtivarPopUpTipo}
-        tipo={2}
-      />
-      <div className="navegacao1">
+      <div
+        className="navegacao1"
+        style={
+          ModoEscuro
+            ? {
+                backgroundColor: "var(--corFundoPreto)",
+              }
+            : { backgroundColor: "var(--corFundoBranco)" }
+        }
+      >
         <img src="src/img/logomuseu.png" width={"40px"} />
         {TypeUser == 2 && (
           <h1
@@ -39,68 +46,87 @@ function Navbar() {
                   }
             }
           >
+            <i
+              class="bx bxs-crown"
+              style={{ color: "#ffd000", marginRight: "10px" }}
+            ></i>
             ADM
             <i
-              class="bx bx-menu"
-              style={
-                ModoEscuro
-                  ? { color: "var(--corFundoBranco)", marginLeft: "10px" }
-                  : { color: "var(--corFundoPreto)", marginLeft: "10px" }
-              }
+              class="bx bxs-crown"
+              style={{ color: "#ffd000", marginLeft: "10px" }}
             ></i>
           </h1>
         )}
         <div className="iconesNav">
-          <i
-            className="bx bxl-youtube"
-            style={
-              ModoEscuro
-                ? { color: "var(--corFundoBranco)" }
-                : { color: "var(--corFundoPreto)" }
-            }
-          ></i>
-          <i
-            className="bx bxl-instagram"
-            style={
-              ModoEscuro
-                ? { color: "var(--corFundoBranco)" }
-                : { color: "var(--corFundoPreto)" }
-            }
-          ></i>
-          <i
-            className="bx bxl-twitter"
-            style={
-              ModoEscuro
-                ? { color: "var(--corFundoBranco)" }
-                : { color: "var(--corFundoPreto)" }
-            }
-          ></i>
-          <i
-            className="bx bxl-github"
-            style={
-              ModoEscuro
-                ? { color: "var(--corFundoBranco)" }
-                : { color: "var(--corFundoPreto)" }
-            }
-          ></i>
+          <a
+            href="https://www.youtube.com/@cienciadacomputacao-ufj7790"
+            target="_blank"
+          >
+            <i
+              className="bx bxl-youtube"
+              style={
+                ModoEscuro
+                  ? { color: "var(--corFundoBranco)" }
+                  : { color: "var(--corFundoPreto)" }
+              }
+            ></i>
+          </a>
+          <a
+            href="https://www.instagram.com/museudacomputacao_ufj/"
+            target="_blank"
+          >
+            <i
+              class="bx bxl-instagram-alt"
+              style={
+                ModoEscuro
+                  ? { color: "var(--corFundoBranco)" }
+                  : { color: "var(--corFundoPreto)" }
+              }
+            ></i>
+          </a>
+          <a href="https://twitter.com/museucomputaufj" target="_blank">
+            <i
+              className="bx bxl-twitter"
+              style={
+                ModoEscuro
+                  ? { color: "var(--corFundoBranco)" }
+                  : { color: "var(--corFundoPreto)" }
+              }
+            ></i>
+          </a>
+          <a href="https://github.com/NeemiasHD" target="_blank">
+            <i
+              className="bx bxl-github"
+              style={
+                ModoEscuro
+                  ? { color: "var(--corFundoBranco)" }
+                  : { color: "var(--corFundoPreto)" }
+              }
+            ></i>
+          </a>
         </div>
       </div>
       <div className="navegacao2">
         <ul>
           <li>
-            <a>Notícias</a>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <a>Acervo</a>
+            <BtnNoticiaNav />
           </li>
           <li>
-            <a>Doação</a>
+            <Link to={"/Acervo"}>Acervo</Link>
           </li>
           <li>
-            <a>Contato</a>
+            <BtnDoacao />
           </li>
           <li>
-            <a onClick={() => SetAtivarPopUpTipo(true)}>
+            <a href="https://wa.me/5562985091523" target="_blank">
+              Contato
+            </a>
+          </li>
+          <li>
+            <a className="BtnLogin" onClick={() => SetAtivarPopUpUsuario(true)}>
               {User.imageUrl ? (
                 <img className="Foto Perfil NavBar" src={User.imageUrl} />
               ) : (

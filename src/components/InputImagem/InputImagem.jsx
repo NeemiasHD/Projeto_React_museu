@@ -90,10 +90,10 @@ function InputImagem({
             src={Background}
             className="ImagemPreview"
             id={`ImagemPreview${id}`}
-            style={type ? {} : { height: "100%" }}
+            style={type ? {} : { width: "100%" }}
           />
         ) : (
-          <img src="" className="ImagemPreview" id={`ImagemPreview${id}`} />
+          <img src="" style={type?{width:"100%"}:{height:"100%"}} className="ImagemPreview" id={`ImagemPreview${id}`} />
         )}
       </label>
     </>
