@@ -15,7 +15,7 @@ function BoasVindas({ type,Imagem,Title }) {
     <>
       <div className="ContainerBemVindo">
         {type ? (
-          <img className="IMGbemvindoPNG" src={"./src/img/bemvindoPNG.png"} />
+          <img className="IMGbemvindoPNG" src={"src/img/bemvindoPNG.png"} />
         ) : (
           <div className="TitleSecondaryPage">
             <h1>{Title}</h1>
@@ -27,7 +27,7 @@ function BoasVindas({ type,Imagem,Title }) {
             <img
               style={{ filter: `blur(${Blur}px)` }}
               className="backgroundbemvindo"
-              src={type?"./src/img/backgroundbemvindo.jpg":Imagem}
+              src={type?"src/img/backgroundbemvindo.jpg":Imagem}
             />
           </div>
         </main>
