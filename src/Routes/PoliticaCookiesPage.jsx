@@ -9,7 +9,7 @@ function PoliticaCookiesPage() {
     <>
       <BoasVindas
         Title={"POLITICA DE COOKIES"}
-        Imagem={"/src/img/backgroundCookiePage.jpg"}
+        Imagem={"https://github.com/NeemiasHD/Projeto_React_museu/blob/main/src/img/backgroundCookiePage.jpg?raw=true"}
       />
       <TextCookie/>
     </>
