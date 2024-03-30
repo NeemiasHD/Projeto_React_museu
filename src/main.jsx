@@ -14,15 +14,15 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/<Projeto_Museu_Digital_frontEnd>",
+        path: "/Projeto_Museu_Digital_frontEnd",
         element: <MainPage />,
       },
       {
-        path: "/<Projeto_Museu_Digital_frontEnd>Acervo",
+        path: "/Acervo",
         element: <AcervoCompleto />,
       },
       {
-        path: "/<Projeto_Museu_Digital_frontEnd>PoliticaCookies",
+        path: "/PoliticaCookies",
         element: <PoliticaCookiesPage />,
       },
     ],
