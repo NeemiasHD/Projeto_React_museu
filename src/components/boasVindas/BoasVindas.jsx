@@ -15,7 +15,7 @@ function BoasVindas({ type,Imagem,Title }) {
     <>
       <div className="ContainerBemVindo">
         {type ? (
-          <img className="IMGbemvindoPNG" src={"../img/bemvindoPNG.png"} />
+          <img className="IMGbemvindoPNG" src={"https://github.com/NeemiasHD/Projeto_React_museu/blob/main/src/img/bemvindoPNG.png"} />
         ) : (
           <div className="TitleSecondaryPage">
             <h1>{Title}</h1>
