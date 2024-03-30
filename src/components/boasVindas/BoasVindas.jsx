@@ -27,7 +27,7 @@ function BoasVindas({ type,Imagem,Title }) {
             <img
               style={{ filter: `blur(${Blur}px)` }}
               className="backgroundbemvindo"
-              src={type?"../img/backgroundbemvindo.JPG":Imagem}
+              src={type?"https://raw.githubusercontent.com/NeemiasHD/Projeto_React_museu/main/src/img/backgroundbemvindo.jpg":Imagem}
             />
           </div>
         </main>
