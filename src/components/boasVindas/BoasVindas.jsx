@@ -27,7 +27,7 @@ function BoasVindas({ type,Imagem,Title }) {
             <img
               style={{ filter: `blur(${Blur}px)` }}
               className="backgroundbemvindo"
-              src={type?"./img/backgroundbemvindo.jpg":Imagem}
+              src={type?"./img/backgroundbemvindo.JPG":Imagem}
             />
           </div>
         </main>
