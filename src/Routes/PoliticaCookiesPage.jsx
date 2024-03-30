@@ -9,7 +9,7 @@ function PoliticaCookiesPage() {
     <>
       <BoasVindas
         Title={"POLITICA DE COOKIES"}
-        Imagem={"src/img/backgroundCookiePage.jpg"}
+        Imagem={"/src/img/backgroundCookiePage.jpg"}
       />
       <TextCookie/>
     </>
