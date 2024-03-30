@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/Projeto_Museu_Digital_frontEnd",
+        path: "/",
         element: <MainPage />,
       },
       {
