@@ -23,7 +23,7 @@ function Navbar({ SetAtivarPopUpUsuario }) {
             : { backgroundColor: "var(--corFundoBranco)" }
         }
       >
-        <img src="src/img/logomuseu.png" width={"40px"} />
+        <img src="Projeto_Museu_Digital_frontEnd/src/img/logomuseu.png" width={"40px"} />
         {TypeUser == 2 && (
           <h1
             style={
