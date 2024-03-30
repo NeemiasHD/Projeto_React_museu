@@ -5,7 +5,7 @@ import BoasVindas from "../components/boasVindas/BoasVindas";
 function AcervoCompleto() {
   return (
     <>
-      <BoasVindas Imagem={"src/img/backgroundAcervo.jpg"} Title={"ACERVO"} />
+      <BoasVindas Imagem={"./src/img/backgroundAcervo.jpg"} Title={"ACERVO"} />
       <Acervo TipoBusca={2} />
     </>
   );
