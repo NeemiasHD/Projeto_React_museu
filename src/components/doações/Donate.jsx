@@ -25,7 +25,7 @@ function Donate() {
               : { color: "var(--corFundoPreto)" }
           }
         >
-          <img src="src/img/logomuseu.png" width={"250px"} />
+          <img src="https://raw.githubusercontent.com/NeemiasHD/Projeto_React_museu/main/src/img/logomuseu.png" width={"250px"} />
           Você pode fazer a diferença na preservação da história da computação!
           O Museu da Computação é um tesouro de inovação e conhecimento, mas
           precisa de sua ajuda para continuar inspirando as gerações futuras.
