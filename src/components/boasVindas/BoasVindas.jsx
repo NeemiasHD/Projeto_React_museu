@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./BoasVindas.css";
 
-function BoasVindas({ type,Imagem,Title }) {
+function BoasVindas({ type, Imagem, Title }) {
   const [Blur, SetBlur] = useState(0);
   window.addEventListener("scroll", () => {
     if (window.scrollY < 300) {
@@ -15,7 +15,12 @@ function BoasVindas({ type,Imagem,Title }) {
     <>
       <div className="ContainerBemVindo">
         {type ? (
-          <img className="IMGbemvindoPNG" src={"./src/img/bemvindoPNG.png"} />
+          <img
+            className="IMGbemvindoPNG"
+            src={
+              "https://raw.githubusercontent.com/NeemiasHD/Projeto_React_museu/main/src/img/bemvindoPNG.png"
+            }
+          />
         ) : (
           <div className="TitleSecondaryPage">
             <h1>{Title}</h1>
@@ -27,7 +32,11 @@ function BoasVindas({ type,Imagem,Title }) {
             <img
               style={{ filter: `blur(${Blur}px)` }}
               className="backgroundbemvindo"
-              src={type?"./src/img/backgroundbemvindo.jpg":Imagem}
+              src={
+                type
+                  ? "https://raw.githubusercontent.com/NeemiasHD/Projeto_React_museu/main/src/img/backgroundbemvindo.jpg"
+                  : Imagem
+              }
             />
           </div>
         </main>

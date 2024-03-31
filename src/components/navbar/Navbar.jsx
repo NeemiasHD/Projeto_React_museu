@@ -23,7 +23,10 @@ function Navbar({ SetAtivarPopUpUsuario }) {
             : { backgroundColor: "var(--corFundoBranco)" }
         }
       >
-        <img src="./src/img/logomuseu.png" width={"40px"} />
+        <img
+          src="https://raw.githubusercontent.com/NeemiasHD/Projeto_React_museu/main/src/img/logomuseu.png"
+          width={"40px"}
+        />
         {TypeUser == 2 && (
           <h1
             style={
