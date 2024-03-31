@@ -20,12 +20,11 @@ function App() {
       document.querySelector(".Cookie").style.bottom = "10px";
     }, 3000);
   };
-  
+
   const [AtivarPopUpUsuario, SetAtivarPopUpUsuario] = useState(false);
   const { ModoEscuro } = useContext(UserContext);
   return (
     <>
-    
       <PopUp
         PopUpAtivo={AtivarPopUpUsuario}
         SetPopUp={SetAtivarPopUpUsuario}
